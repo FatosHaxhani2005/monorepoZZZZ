@@ -1,1 +1,54 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkbox Manipulation Example</title>
+</head>
+<body>
+  <form id="myForm">
+    <label>
+      <input type="checkbox" name="checkbox1" value="Internship">
+      Internship
+    </label>
+
+    <br>
+
+    <label>
+      <input type="checkbox" name="checkbox2" value="Pabau">
+      Pabau
+    </label>
+
+    <br>
+
+    <label>
+      <input type="checkbox" name="checkbox3" value="Employment">
+      Employment
+    </label>
+
+    <br>
+
+    <label>
+      <input type="checkbox" name="checkbox4" value="Career">
+      Career
+    </label>
+  </form>
+
+  <button onclick="shuffleCheckboxes()">Shuffle Values</button>
+ 
+
+  <script>
+    function shuffleCheckboxes() {
+      var form = document.getElementById('myForm');
+      var checkboxes = Array.from(form.getElementsByTagName('input'));
+
+      checkboxes.sort(function() {
+        return 0.5 - Math.random();
+      });
+
+      checkboxes.forEach(function(checkbox) {
+        form.appendChild(checkbox.parentNode);
+      });
+    }
+  </script>
+  </body>
+</html>
